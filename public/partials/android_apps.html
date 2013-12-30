@@ -1,0 +1,27 @@
+<div>
+    <h1>My Android Apps</h1>
+    <div data-fade="1"
+            ng-model="appNames.index" 
+            class="big-font clickable" 
+            bs-tabs>
+        <div ng-repeat="name in appNames" 
+             data-title="{{name}}">  
+        </div>        
+    </div>
+    <div class="row">
+        <div class="span4">
+            <img ng-src="{{mainAppImage}}" class="app">
+            <ul class="app-thumbs">
+                <li ng-repeat="img in app.images" class="clickable">
+                    <img ng-src="{{img}}" ng-click="setImage(img)">
+                </li>
+            </u1>
+        </div>
+        <div class="span8">
+            <h2>Description:</h2>
+            <p class="app-description">
+                {{app.description}}
+            </p>
+        </div>
+    </div>
+</div>

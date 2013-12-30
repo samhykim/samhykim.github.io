@@ -1,0 +1,22 @@
+[
+	{
+	    "description": "My first android app. In my data structures class last semester, I found the practical application of creating an algorithm that solves a sudoku puzzle using depth first search.", 
+	    "id": "soduku-solver", 
+	    "images": [
+	        "img/androidapps/sudoku1.png", 
+	        "img/androidapps/sudoku2.png", 
+	        "img/androidapps/sudoku3.png", 
+	        "img/androidapps/sudoku4.png" 
+	    ], 
+	    "name": "Sudoku Solver" 
+	},
+	{
+	    "description": "This app will show all of the locations where there is free food on campus. After my friend had this great idea as an app, I decided to make it happen. It is currently in development.", 
+	    "id": "food-for-u", 
+	    "images": [
+	        "img/androidapps/foodforu1.png", 
+	        "img/androidapps/foodforu2.png"  
+	    ], 
+	    "name": "Food for U" 
+	}
+]

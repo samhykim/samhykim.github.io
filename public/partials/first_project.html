@@ -1,0 +1,67 @@
+<div>
+	<div class="content-center">
+		<h1 class="pull-left green">
+			{{userName | uppercase}}'s Todo List
+		</h1>
+		<br>
+		<br>
+		<h2> Today is {{today}} </h2>
+		<p>
+			Remaining <b>{{remaining()}}</b> of <b>{{items.length}}</b> Left
+		</p>
+	</div>
+	<div>
+		<hr/> 
+		<select class="pull-right move-left" ng-model="selection" ng-options="month.month for month in months"></select>
+		<form name="taskForm" class="pull-left" novalidate>
+			<input ng-model="newTask.text" 
+				   placeholder="mm/dd, your task"
+				   name="task"
+				   required>     
+			<button class="add-btn move-up" 
+				    ng-click="add(newTask.text, newTask, year)">
+				add
+			</button> 
+			<div class="text-error">
+				<span ng-show="taskForm.task.$error.invalid">Invalid</span>
+			</div>
+			<div class="text-error">
+				<span ng-show="addClicked && taskEmpty">Task is required</span>
+			</div> 
+			<u1 >
+				<li ng-repeat="item in items">
+					{{item.done}}
+					<input ng-model="item.done" 
+						   type="checkbox"
+						   ng-click="complete(item, year)">
+					{{item.text}} 
+				</li>
+			</ul>
+		</form>
+	</div>
+	<br>
+	<div align="center">
+		<table border="4" cellspacing="7" cellpadding="5"> 
+			<tr>
+				<th colspan="9"><b>{{selection.month}} 2013</b></th> 
+			</tr>
+			<tr> 
+				<th>Sun</th>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thu</th>
+				<th>Fri</th>
+				<th>Sat</th>
+			</tr>
+			<tr ng-repeat = "week in selection.calendar"> 
+				<td class="day" ng-repeat = "day in week" bgcolor="{{day.color}}">
+					<input type="button" 
+						   ng-click="display(day)" 
+						   value="{{day.text}}" 
+						   ng-show="day.task != 'No task'"> 
+				</td>	
+			</tr>
+		</table>
+	</div>
+</div>
