@@ -3,6 +3,7 @@
     <head>
        <meta charset="utf-8">
        <title>Sam Kim</title>
+
        <link rel="stylesheet" href="/assets/css/app.css">
        <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
@@ -11,6 +12,10 @@
        <!-- Angular Google CDN -->
        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js"></script>
+       <!-- AngularFire and Firebase CDN -->
+       <script src="//cdn.firebase.com/v0/firebase.js"></script>
+       <script src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+
        <script src="/assets/lib/cdn/jquery-2.0.3.js"></script>
        <script src="/assets/lib/cdn/bootstrap-2.3.2.js"></script>
        
@@ -22,14 +27,11 @@
        <script src="/assets/js/filters.js"></script>
        <script src="/assets/js/services.js"></script>
        <script src="/assets/js/directives.js"></script>
-
+       <base href="/"></base>
     </head>
     <body>
        <div class="navbar">
-            <div class="navbar-inner">
-                  <a href="/index.html/main" class="logo">
-                      <img src="/assets/img/signature.png" class="signature retina">
-                  </a>     
+            <div class="navbar-inner">  
             </div>
         </div>
         <div class="left-menu" ng-controller="MainController">

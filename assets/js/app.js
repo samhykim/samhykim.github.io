@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute'])
+angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute', 'firebase'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
@@ -28,5 +28,5 @@ angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute'])
 
         .otherwise({redirectTo: '/main'});
 
-       // $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
 }]);

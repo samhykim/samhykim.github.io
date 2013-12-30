@@ -13,14 +13,17 @@ angular.module('samspage')
     };
 })
 
-.controller('FirstProjectController', function ($scope, status) {
+.controller('FirstProjectController', function ($scope, status, $firebase) {
 	status.warn("Remember this? This was my first angular project that I did. " +
 				"Looking back at it, I realized how poorly written it was lol. So I cleaned it up a bit. " +
 				"Hopefully I can make a django backend to store the data soon.");
 	$scope.userName = 'Sam';
 	$scope.year = 2013;
-	$scope.items = [];
+	//$scope.items = [];
 	$scope.addClicked = false;
+
+	var ref = new Firebase("https://samhykim.firebaseio.com/list");
+  	$scope.items = $firebase(ref);
 
 	var red = "#ff0000";
 	var white = "#eee9e9";
@@ -142,11 +145,12 @@ angular.module('samspage')
 
 
 	//compute remaining tasks
-	$scope.remaining = function() {
+/*	$scope.remaining = function() {
 		return $scope.items.reduce(function(count, item) {
 			return item.done ? count : count+1;         //condition ? value-if-true : value-if-false
 		}, 0);
 	};
+	*/
 
 	$scope.add = function(newItem, ItemObj, year) {
 		$scope.addClicked = true;
@@ -161,7 +165,7 @@ angular.module('samspage')
 		var day = newItem.slice(3,5);
 		var task = newItem.slice(7, newItem.length);
 		var month = months[month_num-1].month;
-		$scope.items.push(item);
+		$scope.items.$add(item);
 		var day_of_task = findtheDay(day, month, year);
 		day_of_task.color = red;
 		day_of_task.task = newItem;	
@@ -187,6 +191,8 @@ angular.module('samspage')
 	$scope.display = function(day) {
 		alert(day.task);
 	};
+
+	
 })
 
 .controller("AndroidAppsController", function ($scope, androidApps, status) {
@@ -206,7 +212,6 @@ angular.module('samspage')
   	};
 })
 
-.controller("InternshipController", function ($scope, status) {
-})
+
 
 ;
