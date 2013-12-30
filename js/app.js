@@ -7,22 +7,22 @@ angular.module('samspage', ['$strap.directives','ngResource'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/main', {
-            templateUrl: '/public/partials/main.html',
+            templateUrl: '/partials/main.html',
             controller: 'MainController',
         })
 
         .when('/first_project', {
-            templateUrl: '/public/partials/first_project.html',
+            templateUrl: '/partials/first_project.html',
             controller: 'FirstProjectController',
         })
 
         .when('/android_apps', {
-            templateUrl: '/public/partials/android_apps.html',
+            templateUrl: '/partials/android_apps.html',
             controller: 'AndroidAppsController',
         })
 
         .when('/internship', {
-            templateUrl: '/public/partials/internship.html',
+            templateUrl: '/partials/internship.html',
             controller: 'InternshipController',
         })
 
