@@ -4,7 +4,7 @@
 
 angular.module('samspage', ['$strap.directives','ngResource'])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/main', {
             templateUrl: '/assets/partials/main.html',
