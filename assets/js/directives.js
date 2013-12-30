@@ -8,21 +8,13 @@ angular.module('samspage')
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: '/app/partials/status.html',
+        templateUrl: '/assets/partials/status.html',
         link: function (scope, elm, $attrs, ctrl) {
             scope.status = status;
         }
     }
 }])
 
-.directive('zeWalkthrough', function() {
-    return {
-        restrict: 'E',
-        replace: true,
-        transclude: true,
-        templateUrl: '/app/partials/walkthrough.html',
-    }
-})
 
 
 ;
