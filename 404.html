@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" ng-app="samspage">
+    <head>
+       <meta charset="utf-8">
+       <title>Sam Kim</title>
+
+       <link rel="stylesheet" href="/assets/css/app.css">
+       <link rel="stylesheet" href="/assets/css/bootstrap.css">
+
+       <!-- Tutorial -->
+       <link rel="stylesheet" href="tutorial/plugins/css/jquery.walkthrough.css">
+       <!-- Angular Google CDN -->
+       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js"></script>
+       <!-- AngularFire and Firebase CDN -->
+       <script src="//cdn.firebase.com/v0/firebase.js"></script>
+       <script src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+
+       <script src="/assets/lib/cdn/jquery-2.0.3.js"></script>
+       <script src="/assets/lib/cdn/bootstrap-2.3.2.js"></script>
+       
+
+       <script src="/assets/lib/cdn/angular-strap.js"></script>
+       <script src="/assets/lib/angular/angular-resource.js"></script>
+       <script src="/assets/js/app.js"></script>
+       <script src="/assets/js/controllers.js"></script>
+       <script src="/assets/js/filters.js"></script>
+       <script src="/assets/js/services.js"></script>
+       <script src="/assets/js/directives.js"></script>
+       <base href="/"></base>
+    </head>
+    <body>
+       <div class="navbar">
+            <div class="navbar-inner">  
+            </div>
+        </div>
+        <div class="left-menu" ng-controller="MainController">
+            <ul class="nav">
+                <li ng-class="{active: routeIs('/first_project')}"
+                    class="first-project"
+                    ng-click="$location.path('/first_project')">
+                    <img src="/assets/img/main/calendar.jpg" class="menu-img">
+                    <span>First Project</span></li>
+                </li>
+                <li ng-class="{active: routeIs('/android_apps')}"
+                    ng-click="$location.path('/android_apps')">
+                     <img src="/assets/img/main/s3.jpg" class="menu-img">
+                    <span>Android Apps</span>
+                </li>
+                <li ng-class="{active: routeIs('/internship')}"
+                    ng-click="$location.path('/internship')">
+                     <img src="/assets/img/main/paper.gif" class="menu-img">
+                    <span>Internship</span>
+                </li>
+            </ul>
+        </div>
+        <div id="tour2" class="left-menu-invisible"></div>        
+        <br>
+        <ze-status class="general-alert"></ze-status>
+        <br>
+        <br>
+        <div class="content-right" ng-view></div>
+        <br>
+        <br>
+        <footer>
+          <div class="content-center">
+             If you have any comments or concerns, contact <a href="mailto:samhykim@gmail.com">samhykim@gmail.com</a> - Thanks!
+          </div>            
+        </footer>
+    </body>
+</html>
