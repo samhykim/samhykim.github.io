@@ -28,5 +28,5 @@ angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute'])
 
         .otherwise({redirectTo: '/main'});
 
-        $locationProvider.html5Mode(true);
+       // $locationProvider.html5Mode(true);
 }]);
