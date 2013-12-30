@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('samspage', ['$strap.directives','ngResource'])
+angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
