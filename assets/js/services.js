@@ -6,7 +6,7 @@ angular.module('samspage')
 
 
 .factory('androidApps', function ($resource) {
-  return $resource('androidapps/:appId.json', {}, {
+  return $resource('/assets/androidapps/:appId.json', {}, {
     query: {method:'GET', params:{appId:'apps'}, isArray:true}
   });
 })
