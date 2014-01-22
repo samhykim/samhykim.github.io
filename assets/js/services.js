@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('samspage')
+angular.module('samhykim')
 
 
 .factory('androidApps', function ($resource) {

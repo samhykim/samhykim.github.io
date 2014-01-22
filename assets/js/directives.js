@@ -2,7 +2,7 @@
 
 /* Directives */
 
-angular.module('samspage')
+angular.module('samhykim')
 
 .directive('zeStatus', ['status', function (status) {
     return {

@@ -2,11 +2,11 @@
 
 /* App Module */
 
-angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute', 'firebase'])
+angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'firebase'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/main', {
+        .when('/', {
             templateUrl: '/assets/partials/main.html',
             controller: 'MainController',
         })
@@ -26,7 +26,7 @@ angular.module('samspage', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             controller: 'InternshipController',
         })
 
-        .otherwise({redirectTo: '/main'});
+        .otherwise({redirectTo: '/'});
 
         $locationProvider.html5Mode(true);
 }]);

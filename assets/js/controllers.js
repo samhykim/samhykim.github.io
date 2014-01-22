@@ -2,7 +2,11 @@
 
 /* Controllers */
 
-angular.module('samspage')
+angular.module('samhykim')
+
+.controller('MenuController', function ($scope) {
+	$scope.tabs = [' ', 'About', 'Resume', 'Projects', 'EE20', 'Sheet Music', 'Choreography', 'Contact'];
+})
 
 .controller('MainController', function ($scope, $location, status) {
 	$scope.name = "sam";

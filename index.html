@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="samspage">
+<html lang="en" ng-app="samhykim">
     <head>
        <meta charset="utf-8">
        <title>Sam Kim</title>
@@ -30,8 +30,13 @@
        <base href="/"></base>
     </head>
     <body>
-       <div class="navbar">
+       <div class="navbar" ng-controller="MenuController">
             <div class="navbar-inner">  
+              <ul class="navigation">
+                <li ng-repeat="tab in tabs" >
+                    <a href='/{{tab | lowercase}}' class="menu">{{tab}}</a>
+                </li>
+            </u1>
             </div>
         </div>
         <div class="left-menu" ng-controller="MainController">
