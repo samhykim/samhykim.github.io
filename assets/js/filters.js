@@ -2,8 +2,14 @@
 
 /* Filters */
 
-angular.module('phonecatFilters', []).filter('checkmark', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
-  };
-});
+angular.module('samhykim')
+
+.filter('menuUrl', function() {
+	return function (url) {
+		var s = url.toLowerCase();
+		var str = s.replace(' ', '_');
+		return str;
+	}
+})
+
+;

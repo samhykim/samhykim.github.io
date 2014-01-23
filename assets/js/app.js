@@ -26,6 +26,20 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             controller: 'InternshipController',
         })
 
+        .when('/about', {
+            redirectTo: '/',
+        })
+
+        .when('/sheet_music', {
+            templateUrl: '/assets/partials/sheet_music.html',
+            controller: 'SheetMusicController',
+        })
+
+        .when('/choreography', {
+            templateUrl: '/assets/partials/choreography.html',
+            controller: 'ChoreographyController',
+        })
+
         .otherwise({redirectTo: '/'});
 
         $locationProvider.html5Mode(true);

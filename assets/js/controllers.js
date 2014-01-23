@@ -216,6 +216,16 @@ angular.module('samhykim')
   	};
 })
 
+.controller("SheetMusicController", function ($scope, $window) {
+	//$window.open('/downloads/bohemian_rhapsody_cello.pdf');
+})
+
+.controller("ChoreographyController", function ($scope, status) {
+	status.warn("In the past year, I have been getting involved in the dance community " + 
+		"at UC Berkeley. I was recently inspired to begin choreographing so " + 
+		"please enjoy my first ever choreo/dance collab.");
+})
+
 
 
 ;
