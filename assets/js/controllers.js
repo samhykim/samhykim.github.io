@@ -17,17 +17,16 @@ angular.module('samhykim')
     };
 })
 
-.controller('FirstProjectController', function ($scope, status, $firebase) {
-	status.warn("Remember this? This was my first angular project that I did. " +
-				"Looking back at it, I realized how poorly written it was lol. So I cleaned it up a bit. " +
-				"Hopefully I can make a django backend to store the data soon.");
+.controller('CalendarController', function ($scope, status, $firebase) {
+	status.warn("Sam's Yearly Events. Easy way to list important events throughout the semester.");
 	$scope.userName = 'Sam';
-	$scope.year = 2013;
+	
 	//$scope.items = [];
 	$scope.addClicked = false;
 
 	var ref = new Firebase("https://samhykim.firebaseio.com/list");
-  	$scope.items = $firebase(ref);
+  $scope.items = $firebase(ref);
+  console.log($scope.items);
 
 	var red = "#ff0000";
 	var white = "#eee9e9";
@@ -48,10 +47,21 @@ angular.module('samhykim')
 		{month: "November"},
 		{month: "December"},
 	];
-
+	/*var refMonths = new Firebase("https://samhykim.firebaseio.com/calendar");
+  $scope.months = $firebase(refMonths); 
+  console.log($scope.months.length);
+  for (var i = 0; i < months.length; i++) {
+  	if (!$scope.months[i]) {
+  		$scope.months.$add(months[i]);
+  		console.log(months[i]);
+  	}
+  }
+  */
+  
 	$scope.months = months;
 	var d = new Date();
-	$scope.today = months[d.getMonth()].month + " " + d.getDate() + ", " + $scope.year;
+	$scope.year = d.getFullYear();
+	$scope.today = $scope.months[d.getMonth()].month + " " + d.getDate() + ", " + $scope.year;
 
 	$scope.$watch('newTask.text', function (task) {
 		$scope.taskEmpty = false;
@@ -76,20 +86,20 @@ angular.module('samhykim')
 		
 		var monthinyear = day.getMonth();
 		var dayinweek = (num - 1 + start_day) % 7;
-		var day_found = months[monthinyear].calendar[week][dayinweek];
+		var day_found = $scope.months[monthinyear].calendar[week][dayinweek];
 
 		return day_found;
 	};
 
 	var createCalendar = function(year) {
-		for (var k = 0; k < months.length; k++) {
-			var month = months[k].month;
+		for (var k = 0; k < $scope.months.length; k++) {
+			var month = $scope.months[k].month;
 			var firstday = new Date(month + " 1, " + year);	
 			var start_day = firstday.getDay();
 			var monthinyear = firstday.getMonth();
 			var monthlength = daysInMonth(year, monthinyear);
-			months[monthinyear].calendar = [];
-			months[monthinyear].calendar[0] = [];
+			$scope.months[monthinyear].calendar = [];
+			$scope.months[monthinyear].calendar[0] = [];
 			var numday = 1;
 			var week = 0; 
 			var count;
@@ -99,28 +109,28 @@ angular.module('samhykim')
 	        		color: white, 
 	        		task: "No task",
 	        	};   
-				months[monthinyear].calendar[week].push(emptyDay);
+				$scope.months[monthinyear].calendar[week].push(emptyDay);
 	  		}
 	  			for (var i = start_day;i < 7; i++){   //create first week
 	        	var day = {
 	        		text: numday, 
 	        		color: white, 
 	        		task: ""};
-	        	months[monthinyear].calendar[week].push(day);
+	        	$scope.months[monthinyear].calendar[week].push(day);
 	        	numday++;
 	  		}
 	  		
 	  		while (numday <= monthlength) {       //create the rest of the weeks
 	  			week++;
 	  			count = 1;
-	  			months[monthinyear].calendar[week] = [];
+	  			$scope.months[monthinyear].calendar[week] = [];
 		     	for (count; count <= 7 && numday <= monthlength; count++) {
 		         	var day = {
 		         		text: numday, 
 		         		color: white, 
 		         		task: ""
 		         	};
-		         	months[monthinyear].calendar[week].push(day);
+		         	$scope.months[monthinyear].calendar[week].push(day);
 		         	numday++;
 		     	}
 	  		}
@@ -130,14 +140,14 @@ angular.module('samhykim')
 	        		color: white, 
 	        		task: "No task",
 	        	};   
-	  			months[monthinyear].calendar[week].push(emptyDay);
+	  			$scope.months[monthinyear].calendar[week].push(emptyDay);
 	  			count++;
 	  		}
 	    }
 		  //indicate the current day in calendar
 		  var curr_date = new Date();
 		  var curr_day = curr_date.getDate();
-		  var curr_month = months[curr_date.getMonth()].month;
+		  var curr_month = $scope.months[curr_date.getMonth()].month;
 		  var curr_year = curr_date.getFullYear();
 		  var day_obj =  findtheDay(curr_day, curr_month, curr_year);
 		  
@@ -168,7 +178,7 @@ angular.module('samhykim')
 		var month_num = newItem.slice(0,2);
 		var day = newItem.slice(3,5);
 		var task = newItem.slice(7, newItem.length);
-		var month = months[month_num-1].month;
+		var month = $scope.months[month_num-1].month;
 		$scope.items.$add(item);
 		var day_of_task = findtheDay(day, month, year);
 		day_of_task.color = red;
@@ -185,10 +195,10 @@ angular.module('samhykim')
 		var day = item.text.slice(3, 5);
 		var month = months[month_num-1].month;
 		if (item.done) {
-			findtheDay(day, month, year).color = green;
+			findtheDay(day, month, year).color = red;
 		}
 		else {
-			findtheDay(day, month, year).color = red;
+			findtheDay(day, month, year).color = green;
 		}
 	};
 

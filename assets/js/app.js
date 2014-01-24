@@ -11,9 +11,9 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             controller: 'MainController',
         })
 
-        .when('/first_project', {
-            templateUrl: '/assets/partials/first_project.html',
-            controller: 'FirstProjectController',
+        .when('/calendar', {
+            templateUrl: '/assets/partials/calendar.html',
+            controller: 'CalendarController',
         })
 
         .when('/android_apps', {
@@ -28,6 +28,15 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
 
         .when('/about', {
             redirectTo: '/',
+        })
+
+        .when('/ee20', {
+            redirectTo: '/ee20/sp14',
+        })
+
+        .when('/ee20/sp14', {
+            templateUrl: '/assets/partials/ee20.html',
+            controller: 'EE20Controller',
         })
 
         .when('/sheet_music', {

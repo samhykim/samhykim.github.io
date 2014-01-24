@@ -1,7 +1,7 @@
 <div>
 	<div class="content-center">
 		<h1 class="pull-left green">
-			{{userName | uppercase}}'s Todo List
+			{{userName | uppercase}}'s Events
 		</h1>
 		<br>
 		<br>
@@ -14,6 +14,7 @@
 		<hr/> 
 		<select class="pull-right move-left" ng-model="selection" ng-options="month.month for month in months"></select>
 		<form name="taskForm" class="pull-left" novalidate>
+			<!-- ng-pattern="^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[,]([a-zA-Z]+)" -->
 			<input ng-model="newTask.text" 
 				   placeholder="mm/dd, your task"
 				   name="task"
@@ -43,7 +44,7 @@
 	<div align="center">
 		<table border="4" cellspacing="7" cellpadding="5"> 
 			<tr>
-				<th colspan="9"><b>{{selection.month}} 2013</b></th> 
+				<th colspan="9"><b>{{selection.month}} {{year}}</b></th> 
 			</tr>
 			<tr> 
 				<th>Sun</th>
