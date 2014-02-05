@@ -210,9 +210,7 @@ angular.module('samhykim')
 })
 
 .controller("AndroidAppsController", function ($scope, androidApps, status) {
-	status.warn("Over the summer, I wanted to do something productive outside of work so I decided to learn how to develop apps. " +
-				"It was pretty awesome having your own app on you own device. And thanks for giving me the Nexus " +
-				"to develop on."); 
+	status.warn("List of apps I have created so far (only 1)."); 
 	$scope.appNames = ['Sudoku Solver', 'Food For U'];
 	$scope.appNames.index = 0;
 	$scope.$watch('appNames.index', function (index) {

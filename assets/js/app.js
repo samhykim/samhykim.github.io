@@ -16,6 +16,18 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             controller: 'CalendarController',
         })
 
+        .when('/resume', {
+            templateUrl: '/assets/partials/doesnotexist.html',
+        })
+
+        .when('/projects', {
+            templateUrl: '/assets/partials/doesnotexist.html',
+        })
+
+        .when('/contact', {
+            templateUrl: '/assets/partials/doesnotexist.html',
+        })
+
         .when('/android_apps', {
             templateUrl: '/assets/partials/android_apps.html',
             controller: 'AndroidAppsController',
