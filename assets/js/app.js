@@ -57,8 +57,8 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
         })
 
         .when('/choreography', {
-            templateUrl: '/assets/partials/choreography.html',
-            controller: 'ChoreographyController',
+            templateUrl: '/assets/partials/hidden.html',
+            //controller: 'ChoreographyController',
         })
 
         .otherwise({redirectTo: '/'});
