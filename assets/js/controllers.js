@@ -4,6 +4,13 @@
 
 angular.module('samhykim')
 
+.controller('BodyController', function ($scope, $location) {
+	$scope.$location = $location;
+	$scope.routeIs = function(routeName) {
+        return $location.path() === routeName;
+  };
+})
+
 .controller('MenuController', function ($scope) {
 	$scope.tabs = [' ', 'About', 'Resume', 'Projects', 'EE20', 'Sheet Music', 'Choreography', 'Contact'];
 })
