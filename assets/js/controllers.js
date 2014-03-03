@@ -7,7 +7,7 @@ angular.module('samhykim')
 .controller('BodyController', function ($scope, $location) {
 	$scope.$location = $location;
 	$scope.routeIs = function(routeName) {
-        return $location.path() === routeName;
+        return $location.path() === routeName || $location.path() === 'about';
   };
 })
 
