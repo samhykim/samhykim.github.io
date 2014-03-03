@@ -18,6 +18,33 @@ body {
     /*background: #EAEDF1 url(/assets/img/noise-f1.gif) repeat -70% 0;*/
 }
 
+/* NG-ANIMATE CSS */
+.about {
+  font-family: Calisto MT;
+  -webkit-transition: color 0.6s, background-color 0.3s;
+  -moz-transition: color 0.6s, background-color 0.3s;
+  -ms-transition: color 0.6s, background-color 0.3s;
+  transition: color 0.6s, background-color 0.3s;
+  
+  label {
+    display: block;
+  }
+}
+  
+  .animate-enter {
+    -webkit-animation: fadeInLeft 1s;
+    -moz-animation: fadeInLeft 1s;
+    -ms-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
+  }
+  
+  .animate-leave {
+    -webkit-animation: bounceOut 1s;
+    -moz-animation: bounceOut 1s;
+    -ms-animation: bounceOut 1s;
+    animation: bounceOut 1s;
+  }
+
 *
 {
   font-family: Algerian;
@@ -136,6 +163,14 @@ img.signature {
   margin-right: 20px;
 }
 
+img.propic {
+  border-radius: 50px;
+  height: 210px;
+  width: 300px;
+  float: right;
+  margin-right: 40px;
+}
+
 img.pic1 {
   height: 240px;
   width: 360px;
@@ -240,8 +275,9 @@ ul.app-thumbs img {
   width: 300px;
 }
 
-pre-custom {
+about {
   display: block;
+  width: 60%;
   padding: 8.5px;
   margin: 0 10px 9px;
   font-size: 16px;
