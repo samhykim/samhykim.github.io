@@ -29,7 +29,7 @@
        <script src="/assets/js/directives.js"></script>
        <base href="/"></base>
     </head>
-    <body>
+    <body ng-controller="BodyController" ng-class="{main: routeIs('/')}" >
        <div class="navbar" ng-controller="MenuController">
             <div class="navbar-inner">  
               <ul class="navigation">
