@@ -61,6 +61,10 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             //controller: 'ChoreographyController',
         })
 
+        .when('/2048', {
+            templateUrl: '/assets/2048/index.html',
+        })
+
         .otherwise({redirectTo: '/'});
 
         $locationProvider.html5Mode(true);

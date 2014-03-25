@@ -32,11 +32,18 @@
     <body ng-controller="BodyController" ng-class="{main: routeIs('/')}" >
        <div class="navbar" ng-controller="MenuController">
             <div class="navbar-inner">  
-              <ul class="navigation">
-                <li ng-repeat="tab in tabs" >
-                    <a href='/{{tab | menuUrl}}' class="menu">{{tab}}</a>
-                </li>
-            </u1>
+                <ul class="navigation">
+                    <li ng-repeat="tab in tabs" >
+                        <span ng-switch="tab">
+                            <span ng-switch-when="2048">
+                                <a href="/2048/index.html" class="menu" target="_self">2048</a>
+                            </span>
+                            <span ng-switch-default>
+                                <a href='/{{tab | menuUrl}}' class="menu">{{tab}}</a>
+                            </span>
+                        </span>
+                    </li>
+                </u1>
             </div>
         </div>
         <div class="left-menu" ng-controller="MainController">
