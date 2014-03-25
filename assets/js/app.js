@@ -48,7 +48,7 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
 
         .when('/ee20/sp14', {
             templateUrl: '/assets/partials/ee20.html',
-            controller: 'EE20Controller',
+            //controller: 'EE20Controller',
         })
 
         .when('/sheet_music', {

@@ -17,16 +17,24 @@ angular.module('samhykim')
 
 .controller('MainController', function ($scope, $location, status) {
 	$scope.name = "sam";
-	$scope.toggle = true;
+	$scope.toggle = false;
 
 	$scope.$location = $location;
   $scope.routeIs = function(routeName) {
         return $location.path() === routeName;
   };
-  $scope.toggle = function () {
+  $scope.toggleSwitch = function () {
   	 $scope.toggle = !$scope.toggle;
-  	 console.log($scope.toggle)
   };
+  
+
+  $( "#read-more" ).click(function( event ) {
+  	$scope.toggleSwitch();
+  	event.preventDefault();
+  	console.log($scope.toggle)
+  	$scope.toggleSwitch();
+  	console.log($scope.toggle)
+	});
 })
 
 .controller('CalendarController', function ($scope, status, $firebase) {
