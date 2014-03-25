@@ -17,11 +17,16 @@ angular.module('samhykim')
 
 .controller('MainController', function ($scope, $location, status) {
 	$scope.name = "sam";
+	$scope.toggle = true;
 
 	$scope.$location = $location;
-    $scope.routeIs = function(routeName) {
+  $scope.routeIs = function(routeName) {
         return $location.path() === routeName;
-    };
+  };
+  $scope.toggle = function () {
+  	 $scope.toggle = !$scope.toggle;
+  	 console.log($scope.toggle)
+  };
 })
 
 .controller('CalendarController', function ($scope, status, $firebase) {

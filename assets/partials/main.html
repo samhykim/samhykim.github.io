@@ -5,7 +5,19 @@
 	<h4 style="color:rgb(255,255,255);">Student at University of California, Berkeley</h4>
 	<h4 style="color:rgb(255,255,255);">Pursuing a degree in Electrical Engineering and Computer Science</h4>
 	<br>
-	<about ng-animate="animate">
+	<about ng-show="toggle" class="box on" ng-animate="box">
+	I'm a bright young student from Minnesota ready to thrive in the world 
+	revolutionized by scientific discovery and technology. I am currently 
+	working to obtain a B.S in Electrical Engineering and Computer Science at 
+	UC Berkeley. I have gained a fundamental knowledge of programming and am 
+	constantly trying to find new ways to tackle relevant problems and make 
+	life more convenient. When not in an academic setting, I enjoy snowboarding, 
+	dancing, and listening to music...
+	
+	<button class="button" ng-click="toggle()">Read More</button>
+	</about>
+	{{name}}
+	<about ng-hide="toggle" class="box off" ng-animate="box">
 	I'm a bright young student from Minnesota ready to thrive in the world 
 	revolutionized by scientific discovery and technology. I am currently 
 	working to obtain a B.S in Electrical Engineering and Computer Science at 
@@ -13,8 +25,12 @@
 	constantly trying to find new ways to tackle relevant problems and make 
 	life more convenient. When not in an academic setting, I enjoy snowboarding, 
 	dancing, and listening to music.
+	asdf
+	 asdf 
+	 asdf 
 
 	</about>
+
 </div>
 	<!--
 	<img src="/assets/img/main/propic.jpg" class="pic1">
