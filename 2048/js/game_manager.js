@@ -29,6 +29,7 @@ GameManager.prototype.undo = function () {
     if (!prevGrid) {
       this.actuator.message("cannot-undo-move");
     } else {
+      this.over = false;
       this.grid.cells = prevGrid;
       this.actuate("undo");
   }

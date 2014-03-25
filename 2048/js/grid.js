@@ -124,7 +124,6 @@ Grid.prototype.withinBounds = function (position) {
 
 Grid.prototype.serialize = function () {
   var cellState = [];
- console.log(this.cells)
   for (var x = 0; x < this.size; x++) {
     var row = cellState[x] = [];
 
@@ -133,7 +132,7 @@ Grid.prototype.serialize = function () {
       row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
     }
   }
-  console.log(this.undoMoves.length)
+  //console.log(this.undoMoves.length)
   return {
     size: this.size,
     cells: cellState,
