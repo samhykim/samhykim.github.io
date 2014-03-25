@@ -29,11 +29,7 @@ angular.module('samhykim')
   
 
   $( "#read-more" ).click(function( event ) {
-  	$scope.toggleSwitch();
   	event.preventDefault();
-  	console.log($scope.toggle)
-  	$scope.toggleSwitch();
-  	console.log($scope.toggle)
 	});
 })
 
