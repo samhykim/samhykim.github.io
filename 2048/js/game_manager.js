@@ -26,13 +26,10 @@ GameManager.prototype.undo = function () {
   this.actuator.continueGame(); // Clear the game won/lost message
   var prevGrid = this.grid.undoMoves.pop();
 
-    //console.log(this.grid.undoMoves.length)
     if (!prevGrid) {
       this.actuator.message("cannot-undo-move");
     } else {
       this.grid.cells = prevGrid;
-      //console.log(prevGrid);
-      //console.log(this.grid.cells)
       this.actuate("undo");
   }
 
@@ -227,16 +224,13 @@ GameManager.prototype.move = function (direction) {
         if (tile.previousPosition) {  // don't include new tiles that were added
           var newTile = new Tile({x: tile.previousPosition.x, y: tile.previousPosition.y}, tile.value);
           newTile.previousPosition = {x: tile.x, y: tile.y};
-          if (tile.mergedFrom) {
-             tile.mergedFrom.forEach(function (merged) {
-              console.log(merged);
-                newTile = new Tile({x: merged.previousPosition.x, y: merged.previousPosition.y}, merged.value);
-                newTile.previousPosition = {x: merged.x, y: merged.y};
-                cells[merged.previousPosition.x][merged.previousPosition.y] = newTile;
-             });
-          } else {
-            cells[tile.previousPosition.x][tile.previousPosition.y] = newTile;
-          }
+          cells[tile.previousPosition.x][tile.previousPosition.y] = newTile;
+        } else if (tile.mergedFrom) {
+            tile.mergedFrom.forEach(function (merged) {
+            newTile = new Tile({x: merged.previousPosition.x, y: merged.previousPosition.y}, merged.value);
+            newTile.previousPosition = {x: merged.x, y: merged.y};
+            cells[merged.previousPosition.x][merged.previousPosition.y] = newTile;
+          });
         }
       }
     }
@@ -244,7 +238,7 @@ GameManager.prototype.move = function (direction) {
   
   self.grid.undoMoves.push(cells);
 
-    console.log(this.grid.cells)
+    //console.log(this.grid.cells)
     this.actuate();
     //self.grid.undoMoves.push(this.grid.cells);
   }

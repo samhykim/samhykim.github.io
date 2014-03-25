@@ -27,16 +27,18 @@ Grid.prototype.emptyUndos = function () {
 // Empty list of previous moves
 Grid.prototype.getPrevUndoStates = function (state) {
   var prevMoves = [];
-
+  // Don't allow user to undo after they have refreshed a page
+  /*
+  console.log(state)
   for (var x = 0; x < state.length; x++) {
       prevMoves[x] = state[x];
   }
   console.log(prevMoves);
+  */
   return prevMoves;
 };
 
 Grid.prototype.fromState = function (state) {
-  //console.log(state);
   var cells = [];
 
   for (var x = 0; x < this.size; x++) {
@@ -44,7 +46,9 @@ Grid.prototype.fromState = function (state) {
 
     for (var y = 0; y < this.size; y++) {
       var tile = state[x][y];
-     // console.log(tile);
+      // When browser is refreshed, we need to make new Tile objects
+      // because after refreshing, they become objects (not necessarily tiles)
+      // Therefore, we cannot make call tile methods on it
       row.push(tile ? new Tile(tile.position, tile.value) : null);
     }
   }
@@ -120,11 +124,12 @@ Grid.prototype.withinBounds = function (position) {
 
 Grid.prototype.serialize = function () {
   var cellState = [];
-
+ console.log(this.cells)
   for (var x = 0; x < this.size; x++) {
     var row = cellState[x] = [];
 
     for (var y = 0; y < this.size; y++) {
+
       row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
     }
   }
