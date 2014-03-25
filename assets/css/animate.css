@@ -20,11 +20,11 @@
 about {
   display: block;
   width: 60%;
-  height: 200px;
+  height: 180px;
   padding: 8.5px;
   margin: 0 10px 9px;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 18px;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
