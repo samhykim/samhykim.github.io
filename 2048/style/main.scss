@@ -17,7 +17,7 @@ $tile-gold-color: #edc22e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
 $game-container-margin-top: 40px;
-$game-container-background: #bbada0;
+$game-container-background: #F4C643;
 
 $transition-speed: 100ms;
 
@@ -26,13 +26,19 @@ html, body {
   padding: 0;
 
   background: #faf8ef;
-  color: $text-color;
+   background:url('/2048/img/rsz_1rsz_1sathergate_shrunk.jpg')
+   no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  color: #030324;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
 
 body {
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .heading {
@@ -45,6 +51,14 @@ h1.title {
   margin: 0;
   display: block;
   float: left;
+}
+
+.title-img {
+  position: relative;
+  float: left;
+  height: 170px;
+  width: 260px;
+  margin: 10px;
 }
 
 @include keyframes(move-up) {
@@ -62,6 +76,10 @@ h1.title {
 .scores-container {
   float: right;
   text-align: right;
+  position:relative; 
+  bottom:0;
+  right: 0;
+  margin-top: 30%;
 }
 
 .score-container, .best-container {
@@ -121,7 +139,7 @@ p {
 }
 
 a {
-  color: $text-color;
+  color: #10100F;
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
@@ -143,6 +161,12 @@ hr {
 .container {
   width: $field-width;
   margin: 0 auto;
+  padding-right: 200px;
+  padding-left: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;
+
 }
 
 @include keyframes(fade-in) {
@@ -265,6 +289,7 @@ hr {
   .grid-container {
     position: absolute;
     z-index: 1;
+    color: #FFE303;
   }
 
   .grid-row {
@@ -289,7 +314,7 @@ hr {
 
     border-radius: $tile-border-radius;
 
-    background: rgba($tile-color, .35);
+    background: rgba(10, 24, 115, 1);
 
     &:last-child {
       margin-right: 0;
@@ -472,6 +497,7 @@ hr {
   float: left;
   line-height: 42px;
   margin-bottom: 0;
+  width: 70%;
 }
 
 .restart-button {
