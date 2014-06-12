@@ -5,9 +5,9 @@
 angular.module('samhykim')
 
 
-.factory('androidApps', function ($resource) {
-  return $resource('/assets/androidapps/:appId.json', {}, {
-    query: {method:'GET', params:{appId:'apps'}, isArray:true}
+.factory('projects', function ($resource) {
+  return $resource('/assets/projects/:projId.json', {}, {
+    query: {method:'GET', params:{projId:'projects'}, isArray:true}
   });
 })
 

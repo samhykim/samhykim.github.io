@@ -1,4 +1,4 @@
-<div class='content-center'>
+<!--<div class='content-center'>
 	<p style="padding:10px">
 		With much courage, I present to you my first ever CHOREO/DANCE COLLAB. Although it is not cleanest or sharpest choreo, it was so much fun to put together with the little time we had, practicing in bathrooms, under street lamps and basement windows. 
 		Never did I realize how hard it was to choreograph something until I tried it. This was a huge learning experience and a great winter break project, creating a dance routine and teaching it to my friend. I can't believe how long it took to even come up with 5 sec of choreo, and I give huge props to every choreographer out there that dedicates so much time into creating their best routine for every set. 
@@ -12,3 +12,16 @@
 		      src="//www.youtube.com/embed/ReXV2LGk2cw" 
 		      frameborder="0" allowfullscreen>
 	</iframe>
+	-->
+	 <tabset>
+    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active">
+      <span ng-switch="tab.title">
+	        <span ng-switch-when="Sheet Music">
+	            <sheet-music></sheet-music>
+	        </span>
+	        <span ng-switch-default>
+	            <!-- TODO: Don't have a default yet -->
+	        </span>
+	    </span>
+    </tab>
+  </tabset>

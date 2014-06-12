@@ -12,7 +12,7 @@ angular.module('samhykim')
 })
 
 .controller('MenuController', function ($scope) {
-	$scope.tabs = [' ', 'About', 'Resume', 'Projects', 'EE20', '2048', 'Sheet Music', 'Choreography', 'Contact'];
+	$scope.tabs = [' ', 'About', 'Resume', 'Projects', 'EE20', '2048', 'Misc', 'Contact'];
 })
 
 .controller('MainController', function ($scope, $location, status) {
@@ -225,30 +225,50 @@ angular.module('samhykim')
 	
 })
 
-.controller("AndroidAppsController", function ($scope, androidApps, status) {
+.controller("ProjectsController", function ($scope, projects, status) {
 	status.warn("List of apps I have created so far (only 1)."); 
 	$scope.appNames = ['Sudoku Solver', 'Food For U'];
+	/*
 	$scope.appNames.index = 0;
 	$scope.$watch('appNames.index', function (index) {
-		$scope.apps = androidApps.query(function (apps) {	
-			$scope.app = apps[index];
-			$scope.mainAppImage = $scope.app.images[0];
-		});
+		
 	});
-	$scope.setImage = function(imageUrl) {
-    	$scope.mainAppImage = imageUrl;
-  	};
+  */
+	$scope.apps = projects.query(function (projects) {	
+			$scope.sudoku = projects[0];
+			$scope.RFID = projects[1];
+			$scope.blu = projects[2];
+			$scope.website = projects[3];
+			$scope.mainSudokuImage = $scope.sudoku.images[0];
+			$scope.mainRFIDImage = $scope.RFID.images[0];
+			$scope.mainBluImage = $scope.blu.images[0];
+			$scope.mainWebImage = $scope.website.images[0];
+		});
+	$scope.setSudokuImage = function(imageUrl) {
+    $scope.mainSudokuImage = imageUrl;
+  };
+	$scope.setRFIDImage = function(imageUrl) {
+	 	$scope.mainRFIDImage = imageUrl;
+	};
+	$scope.setBluImage = function(imageUrl) {
+	  $scope.mainBluImage = imageUrl;
+	};
+	$scope.setWebImage = function(imageUrl) {
+	  $scope.mainWebImage = imageUrl;
+	};
 })
 
 .controller("SheetMusicController", function ($scope, $window) {
 	//$window.open('/downloads/bohemian_rhapsody_cello.pdf');
 })
 
-.controller("ChoreographyController", function ($scope, status) {
-	status.warn("In the past year, I have been getting involved in the dance community " + 
-		"at UC Berkeley. I was recently inspired to begin choreographing so " + 
-		"please enjoy my first ever choreo/dance collab.");
+.controller("MiscController", function ($scope, status) {
+	$scope.tabs = [
+    { title:'Sheet Music', content:'Dynamic content 1' },
+    { title:'Choreography', content:'Dynamic content 2'}
+  ];
 })
+
 
 
 

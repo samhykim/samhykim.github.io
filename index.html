@@ -4,9 +4,9 @@
        <meta charset="utf-8">
        <title>Sam Kim</title>
 
+       <link rel="stylesheet" href="/assets/css/bootstrap.css">
        <link rel="stylesheet" href="/assets/css/app.css">
        <link rel="stylesheet" href="/assets/css/animate.css">
-       <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
        <!-- Tutorial -->
        <!-- <link rel="stylesheet" href="tutorial/plugins/css/jquery.walkthrough.css"> -->
@@ -19,6 +19,8 @@
 
        <script src="/assets/lib/cdn/jquery-2.0.3.js"></script>
        <script src="/assets/lib/cdn/bootstrap-2.3.2.js"></script>
+
+       <script src="/assets/lib/cdn/ui-bootstrap-tpls-0.11.0.min.js"></script>
        
 
        <script src="/assets/lib/cdn/angular-strap.js"></script>
@@ -62,17 +64,17 @@
                     class="first-project"
                     ng-click="$location.path('/calendar')">
                     <img src="/assets/img/main/calendar.jpg" class="menu-img">
-                    <span>Calendar</span></li>
+                    <span style="font-size:14px">Calendar</span>
                 </li>
                 <li ng-class="{active: routeIs('/android_apps')}"
                     ng-click="$location.path('/android_apps')">
                      <img src="/assets/img/main/s3.jpg" class="menu-img">
-                    <span>Android Apps</span>
+                    <span style="font-size:14px">Android Apps</span>
                 </li>
                 <li ng-class="{active: routeIs('/internship')}"
                     ng-click="$location.path('/internship')">
                      <img src="/assets/img/main/paper.gif" class="menu-img">
-                    <span>Internship</span>
+                    <span style="font-size:14px">Internship</span>
                 </li>
             </ul>
         </div>

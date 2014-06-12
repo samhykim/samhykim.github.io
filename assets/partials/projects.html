@@ -1,0 +1,112 @@
+<div style="margin-left:5%">
+    <h1>My Projects</h1>
+    <hr>
+    <h2>Sudoku Solver App</h2>
+    <div class="row">
+        <div class="span4">
+            <img ng-src="{{mainSudokuImage}}" class="app">
+        </div>
+        <div class="span4">
+            <ul class="app-thumbs">
+                <li ng-repeat="img in sudoku.images" class="clickable">
+                    <img ng-src="{{img}}" ng-click="setSudokuImage(img)">
+                </li>
+            </u1>
+        </div>
+        <div class="span3">
+            <h2>Description:</h2>
+            <p class="app-description">
+                {{sudoku.description}}
+            </p>
+            <button class="btn">
+                <a href="{{sudoku.link}}">go to project</a>
+            </button>
+        </div>
+
+    </div>
+    <hr>
+    <h2>RFID Door Reader</h2>
+    <div class="row">
+        <div class="span4">
+            <img ng-src="{{mainRFIDImage}}" class="app">
+        </div>
+        <div class="span4">
+            <ul class="app-thumbs">
+                <li ng-repeat="img in RFID.images" class="clickable">
+                    <img ng-src="{{img}}" ng-click="setRFIDImage(img)">
+                </li>
+            </u1>
+        </div>
+        <div class="span3">
+            <h2>Description:</h2>
+            <p class="app-description">
+                An RFID reader was hooked up with an Arduino UNO in order to act as a door lock. 
+                Also attached was a powerful servo, which could only move when the correct unique RFID 
+                tag was present. However, this required the tag to be held at most 3cm away from the reader, 
+                which proved to not be very accessible.
+            </p>
+            <button class="btn">
+                <a href="{{RFID.link}}">go to project</a>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <h2>Bluetooth Door Lock</h2>
+    <div class="row">
+        <div class="span4">
+            <img ng-src="{{mainBluImage}}" class="app">
+        </div>
+        <div class="span4">
+            <ul class="app-thumbs">
+                <li ng-repeat="img in blu.images" class="clickable">
+                    <img ng-src="{{img}}" ng-click="setBluImage(img)">
+                </li>
+            </u1>
+        </div>
+        <div class="span3">
+            <h2>Description:</h2>
+            <p class="app-description">
+                To increase the distance from which the arduino could be accessed,
+                a bluetooth module was attached. Using the Android app Ardudroid (credits: Hazim Bitar),
+                I customized the arduino file provided to serve the application of unlocking a door. 
+                The mechanics remained the same as in the RFID door reader project.
+            </p>
+            <button class="btn">
+                <a href="{{blue.link}}">go to project</a>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <h2>2048 with Undo</h2>
+    <div class="row">
+        <div class="span7">
+            <img ng-src="/assets/img/2048.png" class="big-pic">
+        </div>
+        <div class="span3">
+            <h2>Description:</h2>
+            <p class="app-description">
+                A minor adaption of the popular game 2048. An undo button was added
+                to help those finally conquer the game...plus it was excruciatingly painful
+                to lose right before the very end...I know from experience.
+            </p>
+            <button class="btn">
+                <a href="/2048/index.html" class="menu" target="_self">go to project</a>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <h2>{{website.name}}</h2>
+    <div class="row">
+        <div class="span7">
+            <img ng-src="{{mainWebImage}}" class="website">
+        </div>
+        <div class="span3">
+            <h2>Description:</h2>
+            <p class="app-description">
+                My personal website written mostly in AngularJS. This site is hosted using 
+                <a href="https://pages.github.com/">github pages</a>, which allows you to easily
+                push changes to your Github account and instantly see them live.
+            </p>
+        </div>
+    </div>
+</div>

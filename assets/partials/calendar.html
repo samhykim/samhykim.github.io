@@ -42,7 +42,7 @@
 	</div>
 	<br>
 	<div align="center">
-		<table border="4" cellspacing="7" cellpadding="5"> 
+		<table style="border-collapse: inherit" border="4" cellspacing="7" cellpadding="5"> 
 			<tr>
 				<th colspan="9"><b>{{selection.month}} {{year}}</b></th> 
 			</tr>
@@ -57,10 +57,8 @@
 			</tr>
 			<tr ng-repeat = "week in selection.calendar"> 
 				<td class="day" ng-repeat = "day in week" bgcolor="{{day.color}}">
-					<input type="button" 
-						   ng-click="display(day)" 
-						   value="{{day.text}}" 
-						   ng-show="day.task != 'No task'"> 
+					<span ng-click="display(day)"  
+						    ng-show="day.task != 'No task'">{{day.text}}</span>
 				</td>	
 			</tr>
 		</table>

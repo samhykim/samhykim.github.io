@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'firebase'])
+angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'firebase', 'ui.bootstrap'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
@@ -21,7 +21,8 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
         })
 
         .when('/projects', {
-            templateUrl: '/assets/partials/doesnotexist.html',
+            templateUrl: '/assets/partials/projects.html',
+            controller: 'ProjectsController',
         })
 
         .when('/contact', {
@@ -56,9 +57,9 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             controller: 'SheetMusicController',
         })
 
-        .when('/choreography', {
-            templateUrl: '/assets/partials/hidden.html',
-            //controller: 'ChoreographyController',
+        .when('/misc', {
+            templateUrl: '/assets/partials/misc.html',
+            controller: 'MiscController',
         })
 
         .when('/2048', {

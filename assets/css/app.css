@@ -17,6 +17,9 @@ body {
     margin: 0;
     /*background: #EAEDF1 url(/assets/img/noise-f1.gif) repeat -70% 0;*/
 }
+/* UI Bootstrap requires removal of empty href attributes. Following 
+   styling changes are necessary for unwanted route changes */
+.clickable, .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 /* NG-ANIMATE CSS */
 .about {
@@ -72,6 +75,16 @@ body {
 *
 {
   font-family: Serif;
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: #215068;
+  font-size: 16px;
+}
+a:hover {
+  text-decoration: none;
 }
 
 b {
@@ -128,6 +141,9 @@ b {
 .day 
 {
   padding: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .move-up
@@ -176,6 +192,10 @@ b {
   padding-right: 20px;
 }
 
+.navigation {
+  margin-top: 5px;
+}
+
 .navigation .menu {
   color: #FFFFFF;
   line-height: 35px;
@@ -195,63 +215,6 @@ img.propic {
   margin-right: 40px;
 }
 
-img.pic1 {
-  height: 240px;
-  width: 360px;
-  margin-left: 20px;
-  transform:rotate(7deg);
-  -ms-transform:rotate(7deg); /* IE 9 */
-  -webkit-transform:rotate(7deg); /* Safari and Chrome */
-}
-
-img.pic2 {
-  height: 300px;
-  width: 350px;
-  margin-bottom: 50px;
-  transform:rotate(-5deg);
-  -ms-transform:rotate(-5deg); /* IE 9 */
-  -webkit-transform:rotate(-5deg); /* Safari and Chrome */
-}
-
-img.pic3 {
-  height: 300px;
-  width: 250px;
-  margin-top: 40px;
-  margin-left: 20px;
-  transform:rotate(93deg);
-  -ms-transform:rotate(93deg); /* IE 9 */
-  -webkit-transform:rotate(93deg); /* Safari and Chrome */
-}
-
-img.pic4 {
-  height: 300px;
-  width: 450px;
-  margin-top: 30px;
-  margin-left: 50px;
-  transform:rotate(-20deg);
-  -ms-transform:rotate(-20deg); /* IE 9 */
-  -webkit-transform:rotate(-20deg); /* Safari and Chrome */
-}
-
-img.pic5 {
-  height: 250px;
-  width: 350px;
-  margin-top: 30px;
-  transform:rotate(85deg);
-  -ms-transform:rotate(85deg); /* IE 9 */
-  -webkit-transform:rotate(85deg); /* Safari and Chrome */
-}
-
-img.pic6 {
-  height: 200px;
-  width: 300px;
-  padding-bottom: 400px;
-  padding-right: 200px;
-  transform:rotate(100deg);
-  -ms-transform:rotate(100deg); /* IE 9 */
-  -webkit-transform:rotate(100deg); /* Safari and Chrome */
-}
-
 img.group {
   height: 200px;
   width: 300px;
@@ -265,7 +228,37 @@ img.app {
   background-color: white;
   padding: 15px;
   height: 300px;
-  width: 180px;
+  width: 230px;
+}
+
+img.big-pic {
+  margin-left: 38px;
+  height: 350px;
+  width: 300px;
+}
+
+img.website {
+  border: 1px solid black;
+  margin-bottom: 2px;
+  background-color: white;
+  padding: 15px;
+  height: 270px;
+  width: 420px;
+}
+
+ul.web-thumbs {
+  list-style: none;
+}
+
+ul.web-thumbs li {
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+}
+
+ul.web-thumbs img {
+  height: 80px;
+  width: 100px;
 }
 
 .logo-background {
@@ -278,7 +271,6 @@ img.app {
 }
 
 ul.app-thumbs {
-  padding-right: 30px;
   list-style: none;
 }
 
@@ -291,8 +283,8 @@ ul.app-thumbs li {
 
 ul.app-thumbs img {
   height: 100px;
-  width: 60px;
-  padding: 1em;
+  width: 70px;
+  padding: 0.5em;
 }
 
 .app-description {
