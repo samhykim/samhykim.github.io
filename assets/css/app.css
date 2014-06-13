@@ -34,44 +34,6 @@ body {
   }
 }
 
-.repeat-enter-setup, .repeat-leave-setup, .repeat-move-setup {
-    -webkit-transition:all linear 1s;
-    -moz-transition:all linear 1s;
-    -ms-transition:all linear 1s;
-    -o-transition:all linear 1s;
-    transition:all linear 1s;
-}
-.repeat-enter-setup {
-    max-height: 0;
-    opacity:0;
-}
-.repeat-enter-setup.repeat-enter-start {
-    max-height: 250px;
-    opacity:1;
-}
-.repeat-leave-setup {
-    opacity:1;
-    max-height: 250px;
-}
-.repeat-leave-setup.repeat-leave-start {
-    opacity:0;
-    max-height: 0;
-}
-  
-  .animate-enter {
-    -webkit-animation: fadeInLeft 1s;
-    -moz-animation: fadeInLeft 1s;
-    -ms-animation: fadeInLeft 1s;
-    animation: fadeInLeft 1s;
-  }
-  
-  .animate-leave {
-    -webkit-animation: bounceOut 1s;
-    -moz-animation: bounceOut 1s;
-    -ms-animation: bounceOut 1s;
-    animation: bounceOut 1s;
-  }
-
 *
 {
   font-family: Serif;
@@ -104,6 +66,19 @@ b {
 {
   text-align: center;
   align: center;
+}
+
+.social-media {
+  height: 40px;
+  width: 40px;
+  padding-right: 20px;
+}
+
+.links li
+{
+  display: block;
+  list-style-type: none;
+  padding: 8px;
 }
 
 
@@ -200,6 +175,9 @@ b {
   color: #FFFFFF;
   line-height: 35px;
 }
+img {
+  image-resolution: 10dpi;
+}
 
 img.signature {
   height:  65px;
@@ -238,7 +216,6 @@ img.big-pic {
 }
 
 img.website {
-  border: 1px solid black;
   margin-bottom: 2px;
   background-color: white;
   padding: 15px;

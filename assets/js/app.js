@@ -26,7 +26,7 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
         })
 
         .when('/contact', {
-            templateUrl: '/assets/partials/doesnotexist.html',
+            templateUrl: '/assets/partials/contact.html',
         })
 
         .when('/android_apps', {

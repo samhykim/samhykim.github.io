@@ -3,10 +3,10 @@
 	    "description": "My first android app. In my data structures class last semester, I found the practical application of creating an algorithm that solves a sudoku puzzle using depth first search.", 
 	    "id": "soduku-solver", 
 	    "images": [
-	        "/assets/img/androidapps/sudoku1.png", 
-	        "/assets/img/androidapps/sudoku2.png", 
-	        "/assets/img/androidapps/sudoku3.png", 
-	        "/assets/img/androidapps/sudoku4.png" 
+	        "/assets/img/androidapps/sudoku1.jpeg", 
+	        "/assets/img/androidapps/sudoku2.jpeg", 
+	        "/assets/img/androidapps/sudoku3.jpeg", 
+	        "/assets/img/androidapps/sudoku4.jpeg" 
 	    ], 
 	    "name": "Sudoku Solver",
 	    "link": "https://github.com/samhykim/SudokuApp" 
@@ -15,10 +15,10 @@
 	    "description": "",
 	    "id": "rfid-door-opener", 
 	    "images": [
-	        "/assets/img/arduino/rfid1.jpg", 
-	        "/assets/img/arduino/rfid2.jpg", 
-	        "/assets/img/arduino/rfid3.jpg", 
-	        "/assets/img/arduino/rfid4.jpg" 
+	        "/assets/img/arduino/rfid1.jpeg", 
+	        "/assets/img/arduino/rfid2.jpeg", 
+	        "/assets/img/arduino/rfid3.jpeg", 
+	        "/assets/img/arduino/rfid4.jpeg" 
 	    ],
 	    "name": "RFID Door Lock",
 	    "link": "http://samhykim.wordpress.com/portfolio/rfid-door-opener/"
@@ -27,10 +27,10 @@
 	    "description": "",
 	    "id": "bluetooth-door-lock", 
 	    "images": [
-	        "/assets/img/arduino/arduino1.jpg", 
-	        "/assets/img/arduino/arduino2.jpg", 
-	        "/assets/img/arduino/arduino3.jpg", 
-	        "/assets/img/arduino/arduino4.jpg" 
+	        "/assets/img/arduino/arduino1.jpeg", 
+	        "/assets/img/arduino/arduino2.jpeg", 
+	        "/assets/img/arduino/arduino3.jpeg", 
+	        "/assets/img/arduino/arduino4.jpeg" 
 	    ],
 	    "name": "Bluetooth Door Lock",
 	    "link": "https://github.com/samhykim/Bluetooth-Door-Opener"
@@ -39,13 +39,13 @@
 	    "description": "",
 	    "id": "website", 
 	    "images": [
-	        "/assets/img/website/web1.png", 
+	        "/assets/img/website/web1.jpeg", 
 	        "/assets/img/website/web2.png", 
 	        "/assets/img/website/web3.png", 
 	        "/assets/img/website/web4.png" 
 	    ],
 	    "name": "Angular Website",
-	    "link": "https://github.com/samhykim/Bluetooth-Door-Opener"
+	    "link": "samhykim.com"
 	}
 
 ]

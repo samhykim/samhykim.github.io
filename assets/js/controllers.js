@@ -226,7 +226,7 @@ angular.module('samhykim')
 })
 
 .controller("ProjectsController", function ($scope, projects, status) {
-	status.warn("List of apps I have created so far (only 1)."); 
+	status.warn("Projects I have enjoyed creating in my free time."); 
 	$scope.appNames = ['Sudoku Solver', 'Food For U'];
 	/*
 	$scope.appNames.index = 0;
