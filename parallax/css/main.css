@@ -141,11 +141,13 @@ main {
 }
 
 .container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+  position: absolute;
+  width: 500px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 40%;
+  text-align: center;
 }
 .title {
     font-size: 72px;
@@ -154,13 +156,15 @@ main {
 .sub-title {
     font-size: 48px;
     font-family: Charter;
+    margin-bottom: 20px;
 }
 .website {
     background: rgba(230,230, 230, 0.8);
     text-transform: uppercase;
     border-radius: 20px;
     padding: 13px;
-
+    color: black;
+    text-decoration: none;
     font-size: 13px;
     cursor: pointer;
 }
@@ -221,11 +225,8 @@ main {
 		width: 400px;
 		color: #b2b2b2;
 	}
-	.hsContent a {
-		color: #b2b2b2;
-		text-decoration: underline;
-	}
-    
+
+
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/cover-1.jpeg')}
 #slide-1 .hsContent {
@@ -242,25 +243,31 @@ main {
 }
 #slide-2 h2 {
 	position: fixed;
-	top: 70%;
+	top: 50%;
 }
 
 /* Slide 3 */
 #slide-3 .bcg {background-image:url('../img/cover-6.jpg')}
 #slide-3 .hsContent {
-	margin-left: -239px;
+	margin-left: -330px;
+  
+
+    top: 30%;
 }
 	#slide-3 h2 {
 		color: #f2ead6;
 		background-color: rgba(0,0,0,0.6);
+        padding-left: 0;
+        padding-right: 0;
+        
 	}
 
 /* Slide 4 */
 #slide-4 .bcg {background-image:url('../img/cover-4.jpg')}
 #slide-4 .hsContent {
-	margin-left: -450px;
+	margin-left: -300px;
 	position: fixed;
-	top: 250px;
+	top: 170px;
 }
 	#slide-4 h2 {
 		background: none;
