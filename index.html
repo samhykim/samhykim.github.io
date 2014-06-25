@@ -1,95 +1,146 @@
-<!doctype html>
-<html lang="en" ng-app="samhykim">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-       <meta charset="utf-8">
-       <title>Sam Kim</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Demo - Simple parallax scrolling tutorial</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-       <link rel="stylesheet" href="/assets/css/bootstrap.css">
-       <link rel="stylesheet" href="/assets/css/app.css">
-       <link rel="stylesheet" href="/assets/css/animate.css">
+		<link rel="author" href="https://plus.google.com/u/0/109859280204979591787/about"/>
 
-       <!-- Tutorial -->
-       <!-- <link rel="stylesheet" href="tutorial/plugins/css/jquery.walkthrough.css"> -->
-       <!-- Angular Google CDN -->
-       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js"></script>
-       <!-- AngularFire and Firebase CDN -->
-       <script src="//cdn.firebase.com/v0/firebase.js"></script>
-       <script src="//cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-       <script src="/assets/lib/cdn/jquery-2.0.3.js"></script>
-       <script src="/assets/lib/cdn/bootstrap-2.3.2.js"></script>
+		<!--
+			* This demo was prepared for you by Petr Tichy - Ihatetomatoes.net
+			* Want to see more similar demos and tutorials?
+			* Help by spreading the word about Ihatetomatoes blog.
+			* Facebook - https://www.facebook.com/ihatetomatoesblog
+			* Twitter - https://twitter.com/ihatetomatoes
+			* Google+ - https://plus.google.com/u/0/109859280204979591787/about
+		-->
 
-       <script src="/assets/lib/cdn/ui-bootstrap-tpls-0.11.0.min.js"></script>
-       
-
-       <script src="/assets/lib/cdn/angular-strap.js"></script>
-       <script src="/assets/lib/angular/angular-resource.js"></script>
-       <script src="/assets/js/app.js"></script>
-       <script src="/assets/js/controllers.js"></script>
-       <script src="/assets/js/filters.js"></script>
-       <script src="/assets/js/services.js"></script>
-       <script src="/assets/js/directives.js"></script>
-       <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-49373704-1', 'samhykim.com');
-          ga('send', 'pageview');
-       </script>
-       <base href="/"></base>
+        <link rel="stylesheet" href="parallax/css/normalize.css">
+        <link rel="stylesheet" href="parallax/css/main.css">
+        <script src="parallax/js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
-    <body ng-controller="BodyController" ng-class="{main: routeIs('/')}" >
-       <div class="navbar" ng-controller="MenuController">
-            <div class="navbar-inner">  
-                <ul class="navigation">
-                    <li ng-repeat="tab in tabs" >
-                        <span ng-switch="tab">
-                            <span ng-switch-when="2048">
-                                <a href="/2048/index.html" class="menu" target="_self">2048</a>
-                            </span>
-                            <span ng-switch-default>
-                                <a href='/{{tab | menuUrl}}' class="menu">{{tab}}</a>
-                            </span>
-                        </span>
-                    </li>
-                </u1>
-            </div>
-        </div>
-        <div class="left-menu" ng-controller="MainController">
-            <ul class="nav">
-                <li ng-class="{active: routeIs('/calendar')}"
-                    class="first-project"
-                    ng-click="$location.path('/calendar')">
-                    <img src="/assets/img/main/calendar.jpg" class="menu-img">
-                    <span style="font-size:14px">Calendar</span>
-                </li>
-                <li ng-class="{active: routeIs('/android_apps')}"
-                    ng-click="$location.path('/android_apps')">
-                     <img src="/assets/img/main/s3.jpg" class="menu-img">
-                    <span style="font-size:14px">Android Apps</span>
-                </li>
-                <li ng-class="{active: routeIs('/internship')}"
-                    ng-click="$location.path('/internship')">
-                     <img src="/assets/img/main/paper.gif" class="menu-img">
-                    <span style="font-size:14px">Internship</span>
-                </li>
-            </ul>
-        </div>
-        <div id="tour2" class="left-menu-invisible"></div>        
-        <br>
-        <ze-status class="general-alert"></ze-status>
-        <br>
-        <br>
-        <div class="content-right" ng-view></div>
-        <br>
-        <br>
-        <footer class="content-center">
-          <div>
-             If you have any comments or concerns, contact <a href="mailto:samhykim@gmail.com">samhykim@gmail.com</a> - Thanks!
-          </div>            
-        </footer>
+    <body class="loading">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+       	
+       	<div id="preload">
+	       	<img src="img/cover-1.jpeg">
+	       	<img src="img/cover-2.jpeg">
+	       	<img src="img/cover-6.jpg">
+	       	<img src="img/cover-4.jpg">
+       	</div>
+       	
+       	<main class="background">
+       		  <div class="container">
+       		  	<span class="title">Sam Kim</span>
+       		  	<br>
+       		  	<div class="sub-title">@samhykim</div>
+       				<a href="main/index.html" class="website">Enter</a>
+       		  </div>
+        </main>
+       	<main>
+		        <section id="slide-1" class="homeSlide">
+		        	<div class="bcg" 
+		        		data-center="background-position: 50% -10px;" 
+		        		data-top-bottom="background-position: 50% -100px;" 
+		        		data-bottom-top="background-position: 50% 100px;"
+		        		data-anchor-target="#slide-1"
+		        	>
+			        	<div class="hsContainer">
+				    		<div class="hsContent" 
+				    			data-center="opacity: 1" 
+				    			data-center-top="opacity: 0" 
+				    			data--100-bottom="opacity: 0;" 
+				    			 data-anchor-target="#slide-1 h2">
+					    		<h2>Welcome to my page!</h2>
+				    		</div>
+			        	</div>
+		        	</div>
+			    </section>
+			    
+				<section id="slide-2" class="homeSlide">
+					<div class="bcg" 
+						data-center="background-position: 50% 10px;" 
+						data-top-bottom="background-position: 50% -100px;" 
+						data-bottom-top="background-position: 50% 100px;" 
+						data-anchor-target="#slide-2"
+					>
+				    	<div class="hsContainer">
+				    		<div class="hsContent" 
+				    			data-center="opacity: 1" 
+				    			data-center-top="opacity: 0" 
+				    			data--100-bottom="opacity: 0;" 
+				    			data-anchor-target="#slide-2"
+				    		>
+					    		<h2>Feel free to explore around</h2>
+				    		</div>
+				    	</div>
+					</div>
+				</section>
+			    
+				<section id="slide-3" class="homeSlide">
+					<div class="bcg" 
+						data-center="background-position: 50% 0px;" 
+						data-top-bottom="background-position: 50% -100px;" 
+						data-bottom-top="background-position: 50% 100px;" 
+						data-anchor-target="#slide-3">
+				    	<div class="hsContainer">
+							<div class="hsContent" 
+								data--50-bottom="opacity: 0;" 
+								data--200-bottom="opacity: 1;" 
+								data-center="opacity: 1" 
+								data-200-top="opacity: 0" 
+								data-anchor-target="#slide-3">
+					    		<h2 style="font-size:24px">This page uses the skrollr.js plugin to implement a 
+					    		    simple parallax scrolling website. Credits to @iHateTomatoe for
+					    		    the simple tutorial which can be found 
+					    		    <a href="http://ihatetomatoes.net/how-to-create-a-parallax-scrolling-website/">here</a>
+					    		  </h2>
+				    		</div>
+				    	</div>
+				    	
+				    </div>
+				</section>
+				
+				<section id="slide-4" class="homeSlide">
+					<div class="bcg" 
+						data-center="background-position: 50% 0px;" 
+						data-top-bottom="background-position: 50% -100px;" 
+						data-bottom-top="background-position: 50% 100px;" 
+						data-anchor-target="#slide-4">
+				    	<div class="hsContainer">
+							<div class="hsContent" 
+								data-bottom-top="opacity: 0" 
+								data-25-top="opacity: 0" 
+								data-top="opacity: 1"  
+								data-anchor-target="#slide-4">
+					    		<h2>To enter, click the button below</h2>
+					    		<div class="container" style="top: 90%">
+			     					<a href="main/index.html" class="website">Enter</a>
+			     		  	</div>
+				    		</div>
+				    		
+				    	</div>
+				    	
+				    </div>
+				</section>
+		    
+		</main>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="parallax/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="parallax/js/imagesloaded.js"></script>
+        <script src="parallax/js/skrollr.js"></script>
+        <script src="parallax/js/_main.js"></script>
+
     </body>
 </html>

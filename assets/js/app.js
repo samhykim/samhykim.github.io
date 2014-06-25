@@ -6,7 +6,7 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/', {
+        .when('/main', {
             templateUrl: '/assets/partials/main.html',
             controller: 'MainController',
         })
@@ -40,7 +40,7 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
         })
 
         .when('/about', {
-            redirectTo: '/',
+            redirectTo: '/main',
         })
 
         .when('/ee20', {
@@ -66,7 +66,7 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             templateUrl: '/assets/2048/index.html',
         })
 
-        .otherwise({redirectTo: '/'});
+        .otherwise({redirectTo: '/main'});
 
         $locationProvider.html5Mode(true);
 }]);
