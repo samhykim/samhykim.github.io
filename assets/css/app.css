@@ -81,6 +81,10 @@ b {
   padding: 8px;
 }
 
+.btn:hover {
+  -webkit-transition: all 200ms linear;
+}
+
 
 .add-btn 
 {
