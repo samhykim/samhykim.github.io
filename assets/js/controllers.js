@@ -4,11 +4,29 @@
 
 angular.module('samhykim')
 
-.controller('BodyController', function ($scope, $location) {
+.controller('BodyController', function ($scope, $location, $route, $templateCache) {
 	$scope.$location = $location;
 	$scope.routeIs = function(routeName) {
         return $location.path() === routeName || $location.path() === 'about';
   };
+
+  var lastRoute = $route.routes.current;
+  console.log(lastRoute);
+  $scope.$on('$locationChangeSuccess', function (event) {
+    //  $route.reload();
+    console.log("sam");
+    $route.routes.current = lastRoute;
+    var currentPageTemplate = $route.current.templateUrl;
+    $templateCache.remove(currentPageTemplate);
+    $route.reload();
+  });
+  console.log("body controller");
+  /*
+  $scope.mapOptions = {
+      center: new google.maps.LatLng(35.784, -78.670),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }'*/
 })
 
 .controller('MenuController', function ($scope) {
@@ -269,7 +287,14 @@ angular.module('samhykim')
   ];
 })
 
-
-
+.controller("MapsController", function ($scope, status) {
+	$scope.map = {
+    center: {
+        latitude: 45,
+        longitude: -73
+    },
+    zoom: 8
+  };
+})
 
 ;

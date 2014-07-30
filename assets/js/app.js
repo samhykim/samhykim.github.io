@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'firebase', 'ui.bootstrap'])
+angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'firebase', 'ui.bootstrap', 'google-maps'])
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
@@ -29,9 +29,9 @@ angular.module('samhykim', ['$strap.directives','ngResource', 'ngRoute', 'fireba
             templateUrl: '/assets/partials/contact.html',
         })
 
-        .when('/android_apps', {
-            templateUrl: '/assets/partials/android_apps.html',
-            controller: 'AndroidAppsController',
+        .when('/location', {
+            templateUrl: '/assets/partials/location.html',
+            controller: 'MapsController',
         })
 
         .when('/internship', {

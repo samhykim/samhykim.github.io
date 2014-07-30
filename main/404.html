@@ -7,11 +7,12 @@
        <link rel="stylesheet" href="/assets/css/bootstrap.css">
        <link rel="stylesheet" href="/assets/css/app.css">
        <link rel="stylesheet" href="/assets/css/animate.css">
+       <link rel="stylesheet" href="/assets/css/map.css">
 
        <!-- Tutorial -->
        <!-- <link rel="stylesheet" href="tutorial/plugins/css/jquery.walkthrough.css"> -->
        <!-- Angular Google CDN -->
-       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+       <script src="/bower_components/angular/angular.min.js"></script>
        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js"></script>
        <!-- AngularFire and Firebase CDN -->
        <script src="//cdn.firebase.com/v0/firebase.js"></script>
@@ -21,7 +22,10 @@
        <script src="/assets/lib/cdn/bootstrap-2.3.2.js"></script>
 
        <script src="/assets/lib/cdn/ui-bootstrap-tpls-0.11.0.min.js"></script>
-       
+       <!-- Google Maps API -->
+       <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+       <script src='/bower_components/lodash/dist/lodash.underscore.min.js'></script>
+       <script src='/bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
 
        <script src="/assets/lib/cdn/angular-strap.js"></script>
        <script src="/assets/lib/angular/angular-resource.js"></script>
@@ -30,6 +34,7 @@
        <script src="/assets/js/filters.js"></script>
        <script src="/assets/js/services.js"></script>
        <script src="/assets/js/directives.js"></script>
+     
        <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -58,6 +63,9 @@
                 </u1>
             </div>
         </div>
+        <section id="map" >
+            <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
+      </section>
         <div class="left-menu" ng-controller="MainController">
             <ul class="nav">
                 <li ng-class="{active: routeIs('/calendar')}"
@@ -66,10 +74,10 @@
                     <img src="/assets/img/main/calendar.jpg" class="menu-img">
                     <span style="font-size:14px">Calendar</span>
                 </li>
-                <li ng-class="{active: routeIs('/android_apps')}"
-                    ng-click="$location.path('/android_apps')">
+                <li ng-class="{active: routeIs('/location')}"
+                    ng-click="$location.path('/location')">
                      <img src="/assets/img/main/s3.jpg" class="menu-img">
-                    <span style="font-size:14px">Android Apps</span>
+                    <span style="font-size:14px">Map</span>
                 </li>
                 <li ng-class="{active: routeIs('/internship')}"
                     ng-click="$location.path('/internship')">
@@ -83,6 +91,7 @@
         <ze-status class="general-alert"></ze-status>
         <br>
         <br>
+        <div id="map-canvas"></div>
         <div class="content-right" ng-view></div>
         <br>
         <br>
