@@ -1,1 +1,47 @@
-<google-map center="map.center" zoom="map.zoom"></google-map>
+<h1 class="green">Google Maps API</h1>
+<div class="row">
+	<div class="span6">
+  <form name="form" novalidate class="form-horizontal" ng-submit="addMarker()">
+  	<legend>Add a Marker</legend>
+  	<div class="control-group">
+	    <label class="control-label">Location</label>
+	    <div class="controls">
+	      <input type="text" ng-model="location" placeholder="enter location..." required>
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label">Latitude</label>
+	    <div class="controls">
+	      <input type="number" step="any" name="latitude" 
+	             ng-model="latitude" placeholder="enter a latitude coordinate..." required>
+	      <span class="help-block text-error" ng-show="form.latitude.$dirty && form.latitude.$invalid">
+	      	Please enter a number
+	      </span>
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label">Longitude</label>
+	    <div class="controls">
+	      <input type="number" step="any" name="longitude"
+	             ng-model="longitude" placeholder="enter a longitude coordinate..." required>
+	      	<span class="help-block text-error" ng-show="form.longitude.$dirty && form.longitude.$invalid">
+	      		Please enter a number
+	      	</span>
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <div class="controls">
+	      <button type="submit" ng-disabled="form.$invalid" class="btn">add</button>
+	    </div>
+	  </div>
+	</form>
+	</div>
+	<div class="span6">
+     <google-map center="map.center" draggable="true" zoom="map.zoom">
+   			<marker ng-repeat="marker in markers" coords="marker.coordinates">
+   				<marker-label content="marker.title" anchor="-15 50" class="anchor">
+          </marker-label>
+				</marker>
+		 </google-map>
+	</div>	
+</div>

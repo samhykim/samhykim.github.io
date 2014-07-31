@@ -11,16 +11,13 @@ angular.module('samhykim')
   };
 
   var lastRoute = $route.routes.current;
-  console.log(lastRoute);
   $scope.$on('$locationChangeSuccess', function (event) {
     //  $route.reload();
-    console.log("sam");
     $route.routes.current = lastRoute;
     var currentPageTemplate = $route.current.templateUrl;
     $templateCache.remove(currentPageTemplate);
     $route.reload();
   });
-  console.log("body controller");
   /*
   $scope.mapOptions = {
       center: new google.maps.LatLng(35.784, -78.670),
@@ -290,11 +287,26 @@ angular.module('samhykim')
 .controller("MapsController", function ($scope, status) {
 	$scope.map = {
     center: {
-        latitude: 45,
-        longitude: -73
+        latitude: 37.4221,
+        longitude: -122.0844
     },
     zoom: 8
   };
+  $scope.markers = [];
+
+  $scope.addMarker = function() {
+  	var marker = { 
+  		coordinates: { latitude: $scope.latitude, 
+                  longitude: $scope.longitude },
+      title: $scope.location
+    }
+    $scope.markers.push(marker);
+    $scope.map.center = marker.coordinates;
+    $scope.location = '';
+    $scope.latitude = '';
+    $scope.longitude = '';
+    $scope.form.$setPristine();
+  }
 })
 
 ;
