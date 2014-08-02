@@ -309,4 +309,38 @@ angular.module('samhykim')
   }
 })
 
+.controller("InternshipController", function ($scope, $modal) {
+	$scope.enabled = false;
+
+  $scope.open = function () {
+    var modalInstance = $modal.open({
+      templateUrl: 'modal.html',
+      controller: ModalInstanceCtrl
+    });
+
+    modalInstance.result.then(function () {
+      $scope.enabled = true;
+    }, function () {
+      alert("Access Denied");
+    });
+  };
+
+  var ModalInstanceCtrl = function ($scope, $modalInstance) {
+  	var password = "samhykim";
+
+		$scope.enter = function () {
+			if ($scope.password == password) {
+		  	$modalInstance.close();
+		  } else {
+		  	alert("Accessed Denied");
+		  }
+		};
+
+		$scope.dismiss = function () {
+		  $modalInstance.dismiss('cancel');
+		};
+	};
+	$scope.open();
+})
+
 ;
