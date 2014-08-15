@@ -326,10 +326,9 @@ angular.module('samhykim')
   };
 
   var ModalInstanceCtrl = function ($scope, $modalInstance) {
-  	var password = "samhykim";
 
 		$scope.enter = function () {
-			if ($scope.password == password) {
+			if ($scope.password == 'codelogic' || $scope.password == 'tsander' ) {
 		  	$modalInstance.close();
 		  } else {
 		  	alert("Accessed Denied");

@@ -55,6 +55,9 @@
                             <span ng-switch-when="2048">
                                 <a href="/2048/index.html" class="menu" target="_self">2048</a>
                             </span>
+                            <span ng-switch-when="Resume">
+                              <a href="/downloads/resumesummer2014.pdf" class="menu" target="_self">Resume</a>
+                            </span>
                             <span ng-switch-default>
                                 <a href='/{{tab | menuUrl}}' class="menu">{{tab}}</a>
                             </span>
@@ -76,7 +79,7 @@
                 </li>
                 <li ng-class="{active: routeIs('/location')}"
                     ng-click="$location.path('/location')">
-                     <img src="/assets/img/main/s3.jpg" class="menu-img">
+                     <img src="/assets/img/main/map.jpg" class="menu-img">
                     <span style="font-size:14px">Map</span>
                 </li>
                 <li ng-class="{active: routeIs('/internship')}"
