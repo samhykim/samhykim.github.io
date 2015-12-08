@@ -27,7 +27,7 @@ angular.module('samhykim')
 })
 
 .controller('MenuController', function ($scope) {
-	$scope.tabs = [' ', 'About', 'Resume', 'Projects', 'EE20', '2048', 'Misc', 'Contact'];
+	$scope.tabs = [' ', 'About', 'Resume', 'Research', 'Projects', 'EE20', '2048', 'Misc', 'Contact'];
 })
 
 .controller('MainController', function ($scope, $location, status) {
